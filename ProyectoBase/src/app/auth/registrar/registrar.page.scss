@@ -2,13 +2,21 @@ ion-item{
     --background: #15D0B3;
     --color: #fff;
 }
-
-ion-button{
-    --background: white;
-    --opacity: '0%';
+:host {
+    .item-interactive.ion-invalid{
+     --highlight-background: white !important;
+   }
+   .item-interactive.ion-valid{
+     --highlight-background: white !important;
+   }
 }
-
-.button{
-    text-emphasis-color: currentColor;
-    text-align: center;
+ion-button{
+    font-weight: bold;
+}
+.fondo {
+    background-color: #15D0B3;
+}
+h2{
+    color: white;
+    font-weight: bold;
 }
