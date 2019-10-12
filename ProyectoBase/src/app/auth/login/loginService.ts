@@ -7,17 +7,17 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class RegistrarService extends HttpService<Usuario>{
+export class LoginService extends HttpService<Usuario> {
 
   constructor(protected http: HttpClient) {
-    super(http, Usuario.endPoint);
+    super(http, Usuario.endPoint + '/login');
   }
 
-  public getAll(): Observable<Usuario> {
-    return super.getAll();
+  public Login(usuario: Usuario): Observable<Usuario> {
+     const params = new HttpParams()
+     .set('correo', usuario.correo)
+     .set('contrasena', usuario.contrasena);
+     return super.get(params);
   }
 
-  public save(usuario: Usuario): Observable<Usuario>{
-    return super.save(usuario);
-  }
 }
